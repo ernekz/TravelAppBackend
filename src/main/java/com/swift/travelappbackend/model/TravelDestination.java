@@ -1,59 +1,26 @@
 package com.swift.travelappbackend.model;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "t_destinations")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TravelDestination {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String country;
     private String city;
     private String leavingDate;
     private String returningDate;
     private String description;
-    private String createdBy;
+    private Long createdBy;
 
-    public String getCountry() {
-        return country;
-    }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getLeavingDate() {
-        return leavingDate;
-    }
-
-    public void setLeavingDate(String leavingDate) {
-        this.leavingDate = leavingDate;
-    }
-
-    public String getReturningDate() {
-        return returningDate;
-    }
-
-    public void setReturningDate(String returningDate) {
-        this.returningDate = returningDate;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
 }
